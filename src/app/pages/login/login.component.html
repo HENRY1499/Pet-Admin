@@ -1,17 +1,15 @@
-<div class="hold-transition login-page">
-    <div class="login-box">
-        <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
-            <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+<div class="background">
+    <div class="pestana-login">
+        <div id="tarjeta" class="card card-outline">
+            <div class="text-center">
+                <h1 class="card-header">PetPlace</h1>
+                <span>Admin</span>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
-
+                <!-- Formulario Login -->
                 <form autocomplete="off" [formGroup]="f" (ngSubmit)="login()">
-
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" formControlName="email"
+                        <input type="email" class="form-control" placeholder="Correo" formControlName="email"
                             [ngClass]="{'is-invalid':invalidField('email')}">
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -21,23 +19,22 @@
                         <div class="invalid-feedback">Porfavor rellene bien los campos</div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password"
                             [ngClass]="{'is-invalid':invalidField('password')}">
-                        <div class=" input-group-append">
+                        <div id="candadito" class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
                         <div class="invalid-feedback">Porfavor rellene bien los campos</div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                        </div>
+
+                    <div class="boton">
+                        <button type="submit" class="btn btn-success btn-block p-2">Ingresar</button>
                     </div>
                 </form>
+                <!-- FIN Formulario Login -->
             </div>
-            <!-- /.card-body -->
         </div>
         <!-- /.card -->
     </div>
