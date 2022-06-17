@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // importamos la interface Iusers
 import { Iusers } from 'src/app/interface/iusers';
+// importamos el servicio
+import { UsersService } from 'src/app/servicios/users.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -8,13 +10,23 @@ import { Iusers } from 'src/app/interface/iusers';
 })
 export class UsersComponent implements OnInit {
 
-  // declarar variable Iusers
+  // declarar variable globar que trae el tipo de usuario de Iusers
   users: Iusers[] = [];
 
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
-    console.log(this.users);
+    this.getData();
   }
 
+  // funcion para tomar la data de usuarioos
+  getData() {
+    this.usersService.getData().subscribe(
+      {
+        next: (resp) => {
+          console.log("resp", resp);
+        }
+      }
+    )
+  }
 }
