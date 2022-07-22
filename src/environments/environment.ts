@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   urlFirebase: "https://petplace-a1296-default-rtdb.firebaseio.com/",
   urlLogin: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCuaeAzJjX8GetMfriycyTFMGVYS9uJZg4",
-  urlGetUser: "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyCuaeAzJjX8GetMfriycyTFMGVYS9uJZg4"
+  urlGetUser: "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyCuaeAzJjX8GetMfriycyTFMGVYS9uJZg4",
+  urlFiles: 'http://localhost/Angular/Admin/admin-petplace/src/assets/img/'
 };
 
 /*
