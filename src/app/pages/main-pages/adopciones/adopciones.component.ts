@@ -37,7 +37,7 @@ export class AdopcionesComponent implements OnInit {
           pets_product: resp[a].pets_product,
           quantity: resp[a].quantity,
           total: resp[a].total,
-          unit_price: resp[a].unit,
+          unit_price: resp[a].unit_price,
         } as Iadopciones))
         this.dataSource = new MatTableDataSource(this.adopcion);
         console.log(this.dataSource);

@@ -34,13 +34,11 @@
                     <!-- Symbol Column -->
                     <ng-container matColumnDef="commision">
                         <th class="text-center" mat-header-cell *matHeaderCellDef> Comisión </th>
-                        <td mat-cell *matCellDef="let element">
-                            <img src="{{path}}{{element.commision}}" alt="" width="100px" height="100px">
-                        </td>
+                        <td mat-cell *matCellDef="let element">{{element.commision}}</td>
                     </ng-container>
                     <ng-container matColumnDef="id_order">
                         <th class="text-center" mat-header-cell *matHeaderCellDef> Order </th>
-                        <td mat-cell *matCellDef="let element"> {{element.id_order | pipe}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.id_order}} </td>
                     </ng-container>
                     <ng-container matColumnDef="id_payment">
                         <th class="text-center" mat-header-cell *matHeaderCellDef> Pay </th>
