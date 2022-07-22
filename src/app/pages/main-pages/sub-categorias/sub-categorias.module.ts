@@ -5,11 +5,15 @@ import { CommonModule } from '@angular/common';
 import { SubCategoriasComponent } from './sub-categorias.component';
 // importamos el routing
 import { SubCategoriasRoutingModule } from './sub-categorias-routing.module';
+// importamos MatTableModule
+import { MatTableModule } from '@angular/material/table';
+
 @NgModule({
   declarations: [SubCategoriasComponent],
   imports: [
     CommonModule,
-    SubCategoriasRoutingModule
+    SubCategoriasRoutingModule,
+    MatTableModule
   ]
 })
 export class SubCategoriasModule { }
