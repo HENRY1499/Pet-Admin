@@ -9,5 +9,4 @@ export interface Iadopciones {
     total: number,
     unit_price: number,
 
-
 }
