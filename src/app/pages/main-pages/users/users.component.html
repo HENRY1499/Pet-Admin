@@ -15,20 +15,77 @@
 
         <!-- Default box -->
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Title</h3>
 
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
-                Start creating your amazing application!
+            <div class="card-body text-center">
+
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> N° </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container>
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="first_name">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Nombre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="last_name">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Apellido </th>
+                        <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="email">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Correo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="country">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> País </th>
+                        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+                    </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="state">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Estado </th>
+                        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+                    </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="city">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Ciudad </th>
+                        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                    </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="phone">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Celular </th>
+                        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                    </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="address">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Dirección </th>
+                        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+                    </ng-container>
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="picture">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Foto </th>
+                        <td *matCellDef="let element" mat-cell>
+                            <div *ngIf="element.email=='ejemploRoberth@gmail.com'">
+                                <div *ngIf="element.picture == ''">
+                                    <img src="{{path}}photo1.png" class="rounded-circle" width="100" alt="">
+                                </div>
+                                <div *ngIf="element.picture != ''">
+                                    <img src="{{path}}avatar.png" class="rounded-circle" width="100" alt="">
+                                </div>
+                            </div>
+                        </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
