@@ -11,7 +11,7 @@ import { functions } from 'src/app/Helpers/functions';
 })
 export class RefugiosComponent implements OnInit {
 
-  displayColumns: string[] = ['position', 'about', 'abstract', 'address', 'cover', 'email', ' logo', 'pets', 'phone', 'shelter', 'social', 'username']
+  displayColumns: string[] = ['position', 'about', 'abstract', 'address', 'cover', 'email', 'logo', 'pets', 'phone', 'shelter', 'social', 'username']
   refugios: Irefugios[] = [];
   dataSource!: MatTableDataSource<Irefugios>;
   path = environment.urlFiles;
