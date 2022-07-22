@@ -8,4 +8,12 @@ export class functions {
             return false;
         }
     }
+    static screenSize(minWidth: number, maxWidth: number): boolean {
+        if (window.matchMedia(`(min-width:${minWidth}px) and (max-width:${maxWidth}px)`).matches) {
+            return true;
+        } else {
+            return false;
+
+        }
+    }
 }
