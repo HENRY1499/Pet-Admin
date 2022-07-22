@@ -1,7 +1,7 @@
 export interface Irefugios {
     about: string,
     abstract: string,
-    addres: string,
+    address: string,
     cover: string,
     email: string,
     logo: ImageBitmap,
