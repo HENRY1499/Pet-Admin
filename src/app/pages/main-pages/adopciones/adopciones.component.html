@@ -15,20 +15,60 @@
 
         <!-- Default box -->
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Title</h3>
+            <div class="card-body text-center">
 
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
-                Start creating your amazing application!
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
+
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="position">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> N° </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container>
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="client">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Cliente </th>
+                        <td mat-cell *matCellDef="let element"> {{element.client}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="commision">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Comisión </th>
+                        <td mat-cell *matCellDef="let element">
+                            <img src="{{path}}{{element.commision}}" alt="" width="100px" height="100px">
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="id_order">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Order </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id_order | pipe}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="id_payment">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Pay </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id_payment}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="payment_method">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Pago </th>
+                        <td mat-cell *matCellDef="let element"> {{element.payment_method}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="pets_product">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Producto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.pets_product}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="quantity">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Cuenta </th>
+                        <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="total">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Total </th>
+                        <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="unit_price">
+                        <th class="text-center" mat-header-cell *matHeaderCellDef> Precio Unico </th>
+                        <td mat-cell *matCellDef="let element"> {{element.unit_price}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayColums"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayColums;"></tr>
+                </table>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
